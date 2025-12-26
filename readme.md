@@ -13,7 +13,7 @@ Standard read-to-reference alignment often suffers from ambiguity in repetitive 
 * **Assembly-Mediated Projection:** Resolves multi-mapping ambiguity by utilizing the longer context of assembled contigs.
 * **Exact Anchor Consistency:** Uses strict one-to-one mapping anchors to prevent breakpoint drifting.
 * **High Precision in Complex Regions:** Specifically optimized for low-mappability regions, segmental duplications, and extreme GC regions.
-* **Versatile Support:** Works with PacBio HiFi, ONT, and R10+ (HQLR) data.
+* **Versatile Support:** Works with PacBio HiFi, ONT(need existing assembly), and R10+ (HQLR) data.
 * **Compatible Output:** Generates standard BAM files compatible with existing callers like Sniffles2, SVIM, and DeepVariant.
 ![betterbreakpoint](igv.png)
 ## Method Overview
@@ -75,7 +75,7 @@ remap -i "reads/*.fastq.gz" \
 | `-o`, `--outputprefix` | **Yes** | Prefix for the final output BAM file. |
 | `-d`, `--datatype` | **Yes** | Data type: `ont` (R9.x), `hqlr` (R10.x), or `hifi` (PacBio HiFi). |
 | `-t`, `--threads` | No | Number of threads (default: 8). |
-| `-a`, `--asmdata` | No | Path to existing assembly (FASTA or GFA). If omitted, `hifiasm` is run. |
+| `-a`, `--asmdata` | No (yes if ont) | Path to existing assembly (FASTA or GFA). If omitted, `hifiasm` is run. |
 | `--localasm` | No | Enable local assembly mode for reads containing SVs. |
 | `--asm2ref` | No | Path to existing Assembly-to-Reference BAM. |
 | `--read2asm` | No | Path to existing Read-to-Assembly BAM. |
