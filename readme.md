@@ -23,7 +23,7 @@ Instead of aligning reads directly to the reference ($R \to G$), Remap decompose
 1.  **Read-to-Assembly ($R \to A$):** Reads are aligned to de novo assembled contigs.
 2.  **Assembly-to-Reference ($A \to G$):** Contigs are aligned to the reference genome.
 3.  **Coordinate Projection:** Valid anchors are projected from $R$ to $G$ via $A$, and gaps are filled using local alignment.
-
+![workflow](workflow.png)
 ## Installation
 
 ### Prerequisites
