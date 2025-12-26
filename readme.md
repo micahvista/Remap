@@ -4,21 +4,21 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue)](https://www.python.org/)
 [![Bioconda](https://img.shields.io/badge/install%20with-bioconda-brightgreen.svg)](http://bioconda.github.io/)
 
-[cite_start]**Remap** is a projection-based re-mapping framework designed to improve the alignment consistency of long-read sequencing data (PacBio HiFi and ONT)[cite: 1]. 
+**Remap** is a projection-based re-mapping framework designed to improve the alignment consistency of long-read sequencing data (PacBio HiFi and ONT). 
 
 Standard read-to-reference alignment often suffers from ambiguity in repetitive regions (e.g., segmental duplications) and breakpoint jitter in structural variants (SVs). Remap addresses this by using **assembly contigs as a bridge**: reads are first mapped to their local assembly, and then projected onto the reference genome. This approach significantly improves the precision and recall of downstream SV and SNP/Indel calling.
 
 ## Key Features
 
-* [cite_start]**Assembly-Mediated Projection:** Resolves multi-mapping ambiguity by utilizing the longer context of assembled contigs[cite: 1, 3].
-* [cite_start]**Exact Anchor Consistency:** Uses strict one-to-one mapping anchors to prevent breakpoint drifting[cite: 5].
-* [cite_start]**High Precision in Complex Regions:** Specifically optimized for low-mappability regions, segmental duplications, and extreme GC regions.
-* [cite_start]**Versatile Support:** Works with PacBio HiFi, ONT, and R10+ (HQLR) data[cite: 1, 21].
+* **Assembly-Mediated Projection:** Resolves multi-mapping ambiguity by utilizing the longer context of assembled contigs.
+* **Exact Anchor Consistency:** Uses strict one-to-one mapping anchors to prevent breakpoint drifting.
+* **High Precision in Complex Regions:** Specifically optimized for low-mappability regions, segmental duplications, and extreme GC regions.
+* **Versatile Support:** Works with PacBio HiFi, ONT, and R10+ (HQLR) data.
 * **Compatible Output:** Generates standard BAM files compatible with existing callers like Sniffles2, SVIM, and DeepVariant.
 
 ## Method Overview
 
-[cite_start]Instead of aligning reads directly to the reference ($R \to G$), Remap decomposes the problem into two easier steps[cite: 1, 3]:
+Instead of aligning reads directly to the reference ($R \to G$), Remap decomposes the problem into two easier steps:
 
 1.  **Read-to-Assembly ($R \to A$):** Reads are aligned to de novo assembled contigs.
 2.  **Assembly-to-Reference ($A \to G$):** Contigs are aligned to the reference genome.
