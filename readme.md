@@ -15,7 +15,7 @@ Standard read-to-reference alignment often suffers from ambiguity in repetitive 
 * **High Precision in Complex Regions:** Specifically optimized for low-mappability regions, segmental duplications, and extreme GC regions.
 * **Versatile Support:** Works with PacBio HiFi, ONT, and R10+ (HQLR) data.
 * **Compatible Output:** Generates standard BAM files compatible with existing callers like Sniffles2, SVIM, and DeepVariant.
-
+![betterbreakpoint](igv.png)
 ## Method Overview
 
 Instead of aligning reads directly to the reference ($R \to G$), Remap decomposes the problem into two easier steps:
